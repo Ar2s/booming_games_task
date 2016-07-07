@@ -9,6 +9,7 @@ Simple task for booming games
 *    index.html - simple html form which POST a message to send.php
 *    send.php - endpoint, which sends all the values from POST to RabbitMQ queue, then redirects to the sender
 *    receive.php - prints out all the messages send to the queue
+
 ## Usage
 runing the receiver:
 *   $ php receive.php
