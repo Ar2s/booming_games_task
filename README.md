@@ -1,30 +1,14 @@
+## Description 
+Simple task for booming games
+## Requirements
+*    Provided you have [php Composer](https://getcomposer.org/doc/00-intro.md) installed and functional, you can run the following:
+     *    $ composer.phar install
+*    [RabbitMQ](https://www.rabbitmq.com/download.html) is installed and running on localhost on standard port (5672)
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
-
-
-Hi there! Welcome to Cloud9 IDE!
-
-To get you started, we have created a small hello world application.
-
-1) Open the hello-world.php file
-
-2) Follow the run instructions in the file's comments
-
-3) If you want to look at the Apache logs, check out ~/lib/apache2/log
-
-And that's all there is to it! Just have fun. Go ahead and edit the code, 
-or add new files. It's all up to you! 
-
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+## Files
+*    index.html - simple html form which POST a message to send.php
+*    send.php - endpoint, which sends all the values from POST to RabbitMQ queue, then redirects to the sender
+*    receive.php - prints out all the messages send to the queue
+## Usage
+runing the receiver:
+*   $ php receive.php

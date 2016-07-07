@@ -6,16 +6,16 @@
     $connection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
     
     $channel = $connection->channel();
-    $channel->queue_declare('hello', false, false, false, false);
+    $channel->queue_declare('queue', false, false, false, false);
     
     
     foreach ($_POST as $param_name => $param_val) {
-        echo "Param: $param_name; Value: $param_val<br />\n";
+        #echo "Param: $param_name; Value: $param_val<br />\n";
     
         $msg = new AMQPMessage($param_val);
-        $channel->basic_publish($msg, '', 'hello');
+        $channel->basic_publish($msg, '', 'queue');
     
-        echo " [x] Sent ".$param_val."\n";
+        #echo " [x] Sent ".$param_val."\n";
     }
     $channel->close();
     $connection->close();
