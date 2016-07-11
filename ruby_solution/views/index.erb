@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    /* global $*/
+    $(document).ready(function(){
+        $('#disable').click(function() {
+            $(this).attr('disabled', 'disabled');
+            $(this).parents('form').submit();
+        });
+    });
+    </script>
+</head>
+    <body>
+        <form action="/" method="post" >
+            Message: <input type="text" name="message"><br>
+            <input type="submit" id="disable">
+        </form>
+    </body>
+</html>
